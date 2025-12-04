@@ -1,0 +1,8 @@
+{
+  "name": "Shadow Scan",
+  "description": "AI-powered scam detection and vibe checker. Analyze texts, emails, and screenshots to uncover hidden threats and manipulation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

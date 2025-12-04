@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow Scan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              background: 'var(--background)',
+              foreground: 'var(--foreground)',
+              card: 'var(--card)',
+              'card-foreground': 'var(--card-foreground)',
+              popover: 'var(--popover)',
+              'popover-foreground': 'var(--popover-foreground)',
+              primary: 'var(--primary)',
+              'primary-foreground': 'var(--primary-foreground)',
+              secondary: 'var(--secondary)',
+              'secondary-foreground': 'var(--secondary-foreground)',
+              muted: 'var(--muted)',
+              'muted-foreground': 'var(--muted-foreground)',
+              accent: 'var(--accent)',
+              'accent-foreground': 'var(--accent-foreground)',
+              destructive: 'var(--destructive)',
+              'destructive-foreground': 'var(--destructive-foreground)',
+              border: 'var(--border)',
+              input: 'var(--input)',
+              ring: 'var(--ring)',
+            },
+            borderRadius: {
+              lg: 'var(--radius)',
+              md: 'calc(var(--radius) - 2px)',
+              sm: 'calc(var(--radius) - 4px)',
+            },
+            fontFamily: {
+              sans: ['var(--font-sans)', 'sans-serif'],
+              mono: ['var(--font-mono)', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --background: oklch(0.9900 0 0);
+        --foreground: oklch(0 0 0);
+        --card: oklch(1 0 0);
+        --card-foreground: oklch(0 0 0);
+        --popover: oklch(0.9900 0 0);
+        --popover-foreground: oklch(0 0 0);
+        --primary: oklch(0 0 0);
+        --primary-foreground: oklch(1 0 0);
+        --secondary: oklch(0.9400 0 0);
+        --secondary-foreground: oklch(0 0 0);
+        --muted: oklch(0.9700 0 0);
+        --muted-foreground: oklch(0.4400 0 0);
+        --accent: oklch(0.9400 0 0);
+        --accent-foreground: oklch(0 0 0);
+        --destructive: oklch(0.6300 0.1900 23.0300);
+        --destructive-foreground: oklch(1 0 0);
+        --border: oklch(0.9200 0 0);
+        --input: oklch(0.9400 0 0);
+        --ring: oklch(0 0 0);
+        --chart-1: oklch(0.8100 0.1700 75.3500);
+        --chart-2: oklch(0.5500 0.2200 264.5300);
+        --chart-3: oklch(0.7200 0 0);
+        --chart-4: oklch(0.9200 0 0);
+        --chart-5: oklch(0.5600 0 0);
+        --radius: 0.5rem;
+        --font-sans: 'Inter';
+        --font-mono: 'Space Grotesk'; /* Using Space Grotesk for mono-like headings as per app style */
+      }
+
+      .dark {
+        --background: oklch(0 0 0);
+        --foreground: oklch(1 0 0);
+        --card: oklch(0.1400 0 0);
+        --card-foreground: oklch(1 0 0);
+        --popover: oklch(0.1800 0 0);
+        --popover-foreground: oklch(1 0 0);
+        --primary: oklch(1 0 0);
+        --primary-foreground: oklch(0 0 0);
+        --secondary: oklch(0.2500 0 0);
+        --secondary-foreground: oklch(1 0 0);
+        --muted: oklch(0.2300 0 0);
+        --muted-foreground: oklch(0.7200 0 0);
+        --accent: oklch(0.3200 0 0);
+        --accent-foreground: oklch(1 0 0);
+        --destructive: oklch(0.6900 0.2000 23.9100);
+        --destructive-foreground: oklch(0 0 0);
+        --border: oklch(0.2600 0 0);
+        --input: oklch(0.3200 0 0);
+        --ring: oklch(0.7200 0 0);
+        --chart-1: oklch(0.8100 0.1700 75.3500);
+        --chart-2: oklch(0.5800 0.2100 260.8400);
+        --chart-3: oklch(0.5600 0 0);
+        --chart-4: oklch(0.4400 0 0);
+        --chart-5: oklch(0.9200 0 0);
+      }
+
+      body {
+        font-family: var(--font-sans), sans-serif;
+        background-color: var(--background);
+        color: var(--foreground);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--background);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--muted-foreground);
+        border-radius: 4px;
+        opacity: 0.5;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--secondary);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
